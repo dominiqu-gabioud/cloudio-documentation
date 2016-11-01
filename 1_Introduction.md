@@ -23,10 +23,7 @@ Elements of an IoT ecosystem are:
 
 - **Field devices** connected to "things".
 - **Communication networks** connecting field devices to the cloud, possibly through intermediate gateways.
-- **Databases** storing:
-	- the current state and status of the IoT world,
-	- the access rights (see below), and
-	- historical values.
+- **Databases** storing the current state and status of the IoT world, historical values and the access rights needed to enforce privacy rules.
 - **Applications** which are processing field data and possibly also controlling field devices.
 - **Users**: persons or entities (e.g. companies) owning field devices and granting applications read / write access to their field devices.
 
@@ -58,7 +55,7 @@ In its reference implementation, cloud.iO provides interface to two database man
 - the **[InfluxdB time series database](https://influxdata.com)** acting as history database, and
 - the **[NoSQL document database MongodB](http://mongodb.com)** supporting the process and access right databases.
 
-The actual cloud.iO functions are implemented by so-called **micro-services**, which links the messaging system to external components like field devices, application, databases and management interfaces. cloud.iO micro-services are build with the **[Spring IO platform](http://http://spring.io/)**.
+The actual cloud.iO functions are implemented by so-called **micro-services**, which links the messaging system to external components like field devices, applications, databases and management interfaces. cloud.iO micro-services are build with the **[Spring IO platform](http://http://spring.io/)**.
 
 **Field devices** are named "**cloud.iO endpoints**": The communication between endpoints ant the core cloud.iO is based on a secure version of **[the light-weight messaging protocol MQTT](http://mqtt.org)**.
 
@@ -77,9 +74,4 @@ Libraries for cloud.iO endpoints have been developed on the basis of the **[paho
 - web: [http://cloudio.hevs.ch](http://cloudio.hevs.ch)
 - github: [https://github.com/cloudio-project](https://github.com/cloudio-project)
 
-- **Bold** (`Ctrl+B`) and *Italic* (`Ctrl+I`)
-- Quotes (`Ctrl+Q`)
-- Code blocks (`Ctrl+K`)
-- Headings 1, 2, 3 (`Ctrl+1`, `Ctrl+2`, `Ctrl+3`)
-- Lists (`Ctrl+U` and `Ctrl+Shift+O`)
 
