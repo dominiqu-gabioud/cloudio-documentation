@@ -38,9 +38,35 @@ Security and privacy issues have been considered since the early design of cloud
 - Devices are authenticated and their connection to the cloud is encrypted.
 - A central access control system let field device owners decide which applications have read and write access to what field data.
 
+## cloud.io design principles ##
 
-## The cloud.iO components ##
+- **Simplicity**:
+	- A complex system is obtained by composition of simple services.
+	- Most services are stateless.
+- **Scalability**:
+	- Services can be spread over multiple cluster nodes.
+	- Services under high load can be dynamically deployed to additional cluster nodes.
+- **Extensibility**:
+- System can be extended by new services or services can be modified without any - downtime of the system.
 
+## cloud.io actors ##
+
+- **Endpoint**:
+	- Publishes it’s complete data model.
+	- Sends messages when some data of the model changes.
+	- Some data can be modified from the outside (control, parameters).
+- **Application**:
+	- Has access to a subset of all endpoints attributes.
+	- Can search for attributes of a given type.
+	- Can get actual and historical data for attributes.
+	- Can control set point and parameter attributes.
+- **User**:
+- Can be either a person or an entity like a company for example
+- Owns one or more „Endpoints“.
+- Can grant access to its endpoints to other users.
+- Can grant access to endpoint to applications.
+
+## cloud.iO components ##
 
 The heart of cloud.iO is **[the robust messaging system RabbitMQ](https://www.rabbitmq.com/)**. It has been complemented to support access control (see [https://github.com/cloudio-project/cloudio-rabbitmq](https://github.com/cloudio-project/cloudio-rabbitmq)).
 
@@ -63,7 +89,7 @@ Libraries for cloud.iO endpoints have been developed on the basis of the **[paho
 
 ## Online documentation ##
 
-- **cloud.iO semantics**: field device information model, message and topic specification.
+- **cloud.iO data model**: field device semantic information model, message and topic specification.
 - **cloud.iO message routing concept**: topic based routing of messaging, subscribtion service
 - **cloud.iO security model**: authentication, access control, ciphering, privacy rules .enforcment
 - **cloud.iO endpoints**: simplifying the developement of cloud.iO field devices thanks to the cloud.iO endpoint libraries and their APIs.
